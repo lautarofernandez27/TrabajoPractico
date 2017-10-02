@@ -115,11 +115,11 @@ public class NewJFrame extends javax.swing.JFrame {
         labelDomicilio = new javax.swing.JLabel();
         ingresaTelefono = new javax.swing.JTextField();
         labelTelefono = new javax.swing.JLabel();
-        jComboBoxEstCivil = new javax.swing.JComboBox<String>();
+        jComboBoxEstCivil = new javax.swing.JComboBox<>();
         diaNacimiento = new javax.swing.JSpinner();
         mesNacimiento = new javax.swing.JSpinner();
         añoNacimiento = new javax.swing.JSpinner();
-        jComboBoxTipo = new javax.swing.JComboBox<String>();
+        jComboBoxTipo = new javax.swing.JComboBox<>();
         ingresaLocalidad = new javax.swing.JTextField();
         labelLocalidad = new javax.swing.JLabel();
         labelFechaIngreso = new javax.swing.JLabel();
@@ -143,7 +143,7 @@ public class NewJFrame extends javax.swing.JFrame {
         labelCantidad = new javax.swing.JLabel();
         labelNeto = new javax.swing.JLabel();
         ingresaCantidad = new javax.swing.JTextField();
-        jComboBoxNeto = new javax.swing.JComboBox<String>();
+        jComboBoxNeto = new javax.swing.JComboBox<>();
         LabelCodNoDisp = new javax.swing.JLabel();
         pestañaVenta = new javax.swing.JPanel();
         labelDNI2 = new javax.swing.JLabel();
@@ -156,7 +156,7 @@ public class NewJFrame extends javax.swing.JFrame {
         ingresaDniVenta = new javax.swing.JTextField();
         ingresaNombreVenta = new javax.swing.JTextField();
         ingresaApellidoVenta = new javax.swing.JTextField();
-        jComboBoxTipo2 = new javax.swing.JComboBox<String>();
+        jComboBoxTipo2 = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
         botonEliminarProductoDeVenta = new javax.swing.JButton();
@@ -199,7 +199,7 @@ public class NewJFrame extends javax.swing.JFrame {
         labelCantidad1 = new javax.swing.JLabel();
         labelNeto1 = new javax.swing.JLabel();
         ingresaCantidad1 = new javax.swing.JTextField();
-        jComboBoxNeto1 = new javax.swing.JComboBox<String>();
+        jComboBoxNeto1 = new javax.swing.JComboBox<>();
         pestañaVerFichas = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
@@ -226,11 +226,11 @@ public class NewJFrame extends javax.swing.JFrame {
         labelDomicilio1 = new javax.swing.JLabel();
         ingresaTelefono1 = new javax.swing.JTextField();
         labelTelefono1 = new javax.swing.JLabel();
-        jComboBoxEstCivil1 = new javax.swing.JComboBox<String>();
+        jComboBoxEstCivil1 = new javax.swing.JComboBox<>();
         diaNacimiento1 = new javax.swing.JSpinner();
         mesNacimiento1 = new javax.swing.JSpinner();
         añoNacimiento1 = new javax.swing.JSpinner();
-        jComboBoxTipo1 = new javax.swing.JComboBox<String>();
+        jComboBoxTipo1 = new javax.swing.JComboBox<>();
         ingresaLocalidad1 = new javax.swing.JTextField();
         labelLocalidad1 = new javax.swing.JLabel();
         labelFechaIngreso1 = new javax.swing.JLabel();
@@ -580,7 +580,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaPersonas.add(labelTelefono);
         labelTelefono.setBounds(300, 140, 80, 30);
 
-        jComboBoxEstCivil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Casada", "Soltera" }));
+        jComboBoxEstCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Casada", "Soltera" }));
         jComboBoxEstCivil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxEstCivilActionPerformed(evt);
@@ -604,7 +604,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaPersonas.add(añoNacimiento);
         añoNacimiento.setBounds(220, 180, 60, 30);
 
-        jComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lider", "Experta" }));
+        jComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lider", "Experta" }));
         pestañaPersonas.add(jComboBoxTipo);
         jComboBoxTipo.setBounds(120, 220, 140, 30);
 
@@ -820,7 +820,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaNuevoProd.add(ingresaCantidad);
         ingresaCantidad.setBounds(110, 220, 200, 30);
 
-        jComboBoxNeto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Si", "No" }));
+        jComboBoxNeto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
         pestañaNuevoProd.add(jComboBoxNeto);
         jComboBoxNeto.setBounds(530, 120, 50, 30);
 
@@ -929,7 +929,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaVenta.add(ingresaApellidoVenta);
         ingresaApellidoVenta.setBounds(480, 60, 160, 30);
 
-        jComboBoxTipo2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lider", "Experta" }));
+        jComboBoxTipo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lider", "Experta" }));
         jComboBoxTipo2.setEnabled(false);
         pestañaVenta.add(jComboBoxTipo2);
         jComboBoxTipo2.setBounds(480, 100, 160, 30);
@@ -1335,7 +1335,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaEditarProducto.add(ingresaCantidad1);
         ingresaCantidad1.setBounds(110, 220, 200, 30);
 
-        jComboBoxNeto1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Si", "No" }));
+        jComboBoxNeto1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
         pestañaEditarProducto.add(jComboBoxNeto1);
         jComboBoxNeto1.setBounds(530, 120, 50, 30);
 
@@ -1570,7 +1570,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaEditarPersona.add(labelTelefono1);
         labelTelefono1.setBounds(300, 140, 80, 30);
 
-        jComboBoxEstCivil1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Casada", "Soltera" }));
+        jComboBoxEstCivil1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Casada", "Soltera" }));
         jComboBoxEstCivil1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxEstCivil1ActionPerformed(evt);
@@ -1594,7 +1594,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaEditarPersona.add(añoNacimiento1);
         añoNacimiento1.setBounds(220, 180, 60, 30);
 
-        jComboBoxTipo1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lider", "Experta" }));
+        jComboBoxTipo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lider", "Experta" }));
         pestañaEditarPersona.add(jComboBoxTipo1);
         jComboBoxTipo1.setBounds(120, 220, 140, 30);
 
@@ -2878,7 +2878,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     VentaId clave= new VentaId();
                     clave.setCodigoproducto(Long.parseLong(modeloProductosVenta.getValueAt(i, 0).toString()));
                     clave.setDni(Long.parseLong(ingresaDniVenta.getText()));                
-                    v1.setCantidad(Long.parseLong(modeloProductosVenta.getValueAt(i, 2).toString()));
+                    v1.setCantidad((short) Long.parseLong(modeloProductosVenta.getValueAt(i, 2).toString()));
                     Date date = new Date();
                     v1.setFecha(date);
                     v1.setId(clave);

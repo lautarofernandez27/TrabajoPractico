@@ -115,11 +115,11 @@ public class NewJFrame extends javax.swing.JFrame {
         labelDomicilio = new javax.swing.JLabel();
         ingresaTelefono = new javax.swing.JTextField();
         labelTelefono = new javax.swing.JLabel();
-        jComboBoxEstCivil = new javax.swing.JComboBox<>();
+        jComboBoxEstCivil = new javax.swing.JComboBox<String>();
         diaNacimiento = new javax.swing.JSpinner();
         mesNacimiento = new javax.swing.JSpinner();
         añoNacimiento = new javax.swing.JSpinner();
-        jComboBoxTipo = new javax.swing.JComboBox<>();
+        jComboBoxTipo = new javax.swing.JComboBox<String>();
         ingresaLocalidad = new javax.swing.JTextField();
         labelLocalidad = new javax.swing.JLabel();
         labelFechaIngreso = new javax.swing.JLabel();
@@ -143,7 +143,7 @@ public class NewJFrame extends javax.swing.JFrame {
         labelCantidad = new javax.swing.JLabel();
         labelNeto = new javax.swing.JLabel();
         ingresaCantidad = new javax.swing.JTextField();
-        jComboBoxNeto = new javax.swing.JComboBox<>();
+        jComboBoxNeto = new javax.swing.JComboBox<String>();
         LabelCodNoDisp = new javax.swing.JLabel();
         pestañaVenta = new javax.swing.JPanel();
         labelDNI2 = new javax.swing.JLabel();
@@ -156,7 +156,7 @@ public class NewJFrame extends javax.swing.JFrame {
         ingresaDniVenta = new javax.swing.JTextField();
         ingresaNombreVenta = new javax.swing.JTextField();
         ingresaApellidoVenta = new javax.swing.JTextField();
-        jComboBoxTipo2 = new javax.swing.JComboBox<>();
+        jComboBoxTipo2 = new javax.swing.JComboBox<String>();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
         botonEliminarProductoDeVenta = new javax.swing.JButton();
@@ -199,7 +199,7 @@ public class NewJFrame extends javax.swing.JFrame {
         labelCantidad1 = new javax.swing.JLabel();
         labelNeto1 = new javax.swing.JLabel();
         ingresaCantidad1 = new javax.swing.JTextField();
-        jComboBoxNeto1 = new javax.swing.JComboBox<>();
+        jComboBoxNeto1 = new javax.swing.JComboBox<String>();
         pestañaVerFichas = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
@@ -226,11 +226,11 @@ public class NewJFrame extends javax.swing.JFrame {
         labelDomicilio1 = new javax.swing.JLabel();
         ingresaTelefono1 = new javax.swing.JTextField();
         labelTelefono1 = new javax.swing.JLabel();
-        jComboBoxEstCivil1 = new javax.swing.JComboBox<>();
+        jComboBoxEstCivil1 = new javax.swing.JComboBox<String>();
         diaNacimiento1 = new javax.swing.JSpinner();
         mesNacimiento1 = new javax.swing.JSpinner();
         añoNacimiento1 = new javax.swing.JSpinner();
-        jComboBoxTipo1 = new javax.swing.JComboBox<>();
+        jComboBoxTipo1 = new javax.swing.JComboBox<String>();
         ingresaLocalidad1 = new javax.swing.JTextField();
         labelLocalidad1 = new javax.swing.JLabel();
         labelFechaIngreso1 = new javax.swing.JLabel();
@@ -342,21 +342,41 @@ public class NewJFrame extends javax.swing.JFrame {
 
         botonConsignacion.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         botonConsignacion.setText("CONSIGNACION");
+        botonConsignacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonConsignacionActionPerformed(evt);
+            }
+        });
         panelCaja.add(botonConsignacion);
         botonConsignacion.setBounds(0, 50, 190, 50);
 
         botonResumen.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         botonResumen.setText("RESUMEN");
+        botonResumen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonResumenActionPerformed(evt);
+            }
+        });
         panelCaja.add(botonResumen);
         botonResumen.setBounds(0, 200, 190, 50);
 
         botonDevolucion.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         botonDevolucion.setText("DEVOLUCION");
+        botonDevolucion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonDevolucionActionPerformed(evt);
+            }
+        });
         panelCaja.add(botonDevolucion);
         botonDevolucion.setBounds(0, 100, 190, 50);
 
         botonMovimientos.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         botonMovimientos.setText("ULT. MOVIMIENTOS");
+        botonMovimientos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonMovimientosActionPerformed(evt);
+            }
+        });
         panelCaja.add(botonMovimientos);
         botonMovimientos.setBounds(0, 150, 190, 50);
 
@@ -427,11 +447,21 @@ public class NewJFrame extends javax.swing.JFrame {
 
         botonListado1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         botonListado1.setText("RANKING LIDERES");
+        botonListado1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonListado1ActionPerformed(evt);
+            }
+        });
         panelRankings.add(botonListado1);
         botonListado1.setBounds(0, 0, 200, 50);
 
         botonListado2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         botonListado2.setText("RANKING EXPERTAS");
+        botonListado2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonListado2ActionPerformed(evt);
+            }
+        });
         panelRankings.add(botonListado2);
         botonListado2.setBounds(0, 50, 200, 50);
 
@@ -580,7 +610,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaPersonas.add(labelTelefono);
         labelTelefono.setBounds(300, 140, 80, 30);
 
-        jComboBoxEstCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Casada", "Soltera" }));
+        jComboBoxEstCivil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Casada", "Soltera" }));
         jComboBoxEstCivil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxEstCivilActionPerformed(evt);
@@ -604,7 +634,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaPersonas.add(añoNacimiento);
         añoNacimiento.setBounds(220, 180, 60, 30);
 
-        jComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lider", "Experta" }));
+        jComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lider", "Experta" }));
         pestañaPersonas.add(jComboBoxTipo);
         jComboBoxTipo.setBounds(120, 220, 140, 30);
 
@@ -820,7 +850,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaNuevoProd.add(ingresaCantidad);
         ingresaCantidad.setBounds(110, 220, 200, 30);
 
-        jComboBoxNeto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
+        jComboBoxNeto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Si", "No" }));
         pestañaNuevoProd.add(jComboBoxNeto);
         jComboBoxNeto.setBounds(530, 120, 50, 30);
 
@@ -929,7 +959,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaVenta.add(ingresaApellidoVenta);
         ingresaApellidoVenta.setBounds(480, 60, 160, 30);
 
-        jComboBoxTipo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lider", "Experta" }));
+        jComboBoxTipo2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lider", "Experta" }));
         jComboBoxTipo2.setEnabled(false);
         pestañaVenta.add(jComboBoxTipo2);
         jComboBoxTipo2.setBounds(480, 100, 160, 30);
@@ -1335,7 +1365,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaEditarProducto.add(ingresaCantidad1);
         ingresaCantidad1.setBounds(110, 220, 200, 30);
 
-        jComboBoxNeto1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
+        jComboBoxNeto1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Si", "No" }));
         pestañaEditarProducto.add(jComboBoxNeto1);
         jComboBoxNeto1.setBounds(530, 120, 50, 30);
 
@@ -1570,7 +1600,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaEditarPersona.add(labelTelefono1);
         labelTelefono1.setBounds(300, 140, 80, 30);
 
-        jComboBoxEstCivil1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Casada", "Soltera" }));
+        jComboBoxEstCivil1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Casada", "Soltera" }));
         jComboBoxEstCivil1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxEstCivil1ActionPerformed(evt);
@@ -1594,7 +1624,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaEditarPersona.add(añoNacimiento1);
         añoNacimiento1.setBounds(220, 180, 60, 30);
 
-        jComboBoxTipo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lider", "Experta" }));
+        jComboBoxTipo1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lider", "Experta" }));
         pestañaEditarPersona.add(jComboBoxTipo1);
         jComboBoxTipo1.setBounds(120, 220, 140, 30);
 
@@ -1676,7 +1706,6 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
         jTable5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jTable5.setRowSelectionAllowed(false);
         jTable5.getTableHeader().setReorderingAllowed(false);
         jScrollPane5.setViewportView(jTable5);
 
@@ -1830,6 +1859,53 @@ public class NewJFrame extends javax.swing.JFrame {
          return productos.isEmpty();
     }
     
+    private void reiniciarValores(){
+        
+        //VENTANA VENTA
+        precioTotalVenta=0d;
+        precioSubtotalVenta=0d;
+        totalVenta.setText(precioTotalVenta.toString());
+        subtotalVenta.setText(precioSubtotalVenta.toString());
+        descuentoVenta.setText("");
+        ingresaDniVenta.setText("");
+        ingresaNombreVenta.setText("");
+        ingresaApellidoVenta.setText("");
+        
+        //VENTANA NUEVO PRODUCTO
+        ingresaLinea.setText("");
+        ingresaPrecio.setText("");
+        ingresaNombreProd.setText("");   
+        botonGuardarNP.setEnabled(false);
+        ingresaCodProd.setText("");
+        ingresaCantidad.setText("");
+        
+        //VENTANA NUEVA FICHA
+        ingresaDNI.setText("");
+        ingresaNombrePersona.setText("");
+        ingresaApellidoPersona.setText("");
+        ingresaLocalidad.setText("");
+        ingresaCodPostal.setText("");
+        ingresaDomicilio.setText("");
+        ingresaTelefono.setText("");
+        
+        //VENTANA VER LISTADO PRODUCTOS
+        ingresaFiltroProd.setText("");
+        
+        //VENTANA EDITAR PRODUCTO
+        
+        ingresaCodProd1.setText("");
+        ingresaLinea1.setText("");
+        ingresaPrecio1.setText("");
+        ingresaNombreProd1.setText("");
+        ingresaCantidad1.setText("");
+        
+        //VENTANA VER LISTADO STOCK MINIMO
+        ingresaFiltroProd1.setText("");
+        
+        //VENTANA VER FICHAS
+        ingresaFiltroFicha.setText("");
+    }
+    
     
     private boolean hayPestañasAbiertas(){
         if((panelCaja.isVisible())||(panelProductos.isVisible())||(panelPersonas.isVisible())||(panelRankings.isVisible()))
@@ -1949,6 +2025,7 @@ public class NewJFrame extends javax.swing.JFrame {
        limpiarTablaListadoProducto();
        cerrarPestañas();
        cerrarPaneles();
+       reiniciarValores();
        fondo.setVisible(false);
        pestañaNuevoProd.setVisible(true);
        LabelCodNoDisp.setVisible(false);
@@ -1975,20 +2052,14 @@ public class NewJFrame extends javax.swing.JFrame {
         }
         pestañaNuevoProd.setVisible(false);
         fondo.setVisible(true);
-        ingresaCodProd.setText("");
-        ingresaLinea.setText("");
-        ingresaPrecio.setText("");
-        ingresaNombreProd.setText("");
-        ingresaCantidad.setText("");
+        reiniciarValores();
         botonGuardarNP.setEnabled(false);
     }//GEN-LAST:event_botonGuardarNPActionPerformed
 
     private void botonCancelarNPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarNPActionPerformed
         pestañaNuevoProd.setVisible(false);
         fondo.setVisible(true);
-        ingresaLinea.setText("");
-        ingresaPrecio.setText("");
-        ingresaNombreProd.setText("");   botonGuardarNP.setEnabled(false);
+        reiniciarValores();
     }//GEN-LAST:event_botonCancelarNPActionPerformed
 
     private void ingresaNombreProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresaNombreProdActionPerformed
@@ -2068,13 +2139,7 @@ public class NewJFrame extends javax.swing.JFrame {
         }
         pestañaPersonas.setVisible(false);
         fondo.setVisible(true);
-        ingresaDNI.setText("");
-        ingresaNombrePersona.setText("");
-        ingresaApellidoPersona.setText("");
-        ingresaLocalidad.setText("");
-        ingresaDomicilio.setText("");
-        ingresaTelefono.setText("");
-        ingresaCodPostal.setText("");
+        reiniciarValores();
         botonGuardarPersona.setEnabled(false);         // TODO add your handling code here:
     }//GEN-LAST:event_botonGuardarPersonaActionPerformed
 
@@ -2085,13 +2150,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private void botonCancelarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarPersonaActionPerformed
         pestañaPersonas.setVisible(false);
         fondo.setVisible(true);
-        ingresaDNI.setText("");
-        ingresaNombrePersona.setText("");
-        ingresaApellidoPersona.setText("");
-        ingresaLocalidad.setText("");
-        ingresaCodPostal.setText("");
-        ingresaDomicilio.setText("");
-        ingresaTelefono.setText("");
+        reiniciarValores();
         botonGuardarNP.setEnabled(false);            // TODO add your handling code here:
         
     }//GEN-LAST:event_botonCancelarPersonaActionPerformed
@@ -2160,6 +2219,7 @@ public class NewJFrame extends javax.swing.JFrame {
        limpiarTablaListadoProducto();
         cerrarPestañas();
        cerrarPaneles();
+       reiniciarValores();
        fondo.setVisible(false);
        pestañaPersonas.setVisible(true);
     }//GEN-LAST:event_botonNuevaFichaActionPerformed
@@ -2289,7 +2349,7 @@ public class NewJFrame extends javax.swing.JFrame {
     
     private void botonVerListadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerListadoActionPerformed
        limpiarTablaListadoProducto();
-       
+       reiniciarValores();
        cerrarPestañas();
        cerrarPaneles();
        cargarTablaProductos();
@@ -2321,6 +2381,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaVerListado.setVisible(false);
         fondo.setVisible(true);
         limpiarTablaListadoProducto();
+        reiniciarValores();
     }//GEN-LAST:event_cerrarListadoActionPerformed
 
     private void ingresaFiltroProdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ingresaFiltroProdKeyReleased
@@ -2429,6 +2490,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaStockMinimo.setVisible(false);
         fondo.setVisible(true);
         limpiarTablaListadoProducto();
+        reiniciarValores();
     }//GEN-LAST:event_cerrarStockMinimoActionPerformed
 
     private void botonStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonStockActionPerformed
@@ -2436,6 +2498,7 @@ public class NewJFrame extends javax.swing.JFrame {
        List<Producto> productos;
        cerrarPestañas();
        cerrarPaneles();
+       reiniciarValores();
        fondo.setVisible(false);
        pestañaStockMinimo.setVisible(true);
        Session session = NewHibernateUtil.getSessionFactory().openSession();
@@ -2519,12 +2582,9 @@ public class NewJFrame extends javax.swing.JFrame {
             System.err.println(e);
         }
          session1.close();
+         
+        reiniciarValores();
         pestañaEditarProducto.setVisible(false);
-        ingresaCodProd1.setText("");
-        ingresaLinea1.setText("");
-        ingresaPrecio1.setText("");
-        ingresaNombreProd1.setText("");
-        ingresaCantidad1.setText("");
         
         //CARGO DE NUEVO LA TABLA DESDE LA DB
         limpiarTablaListadoProducto();
@@ -2659,6 +2719,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private void cerrarListado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarListado1ActionPerformed
         pestañaVerFichas.setVisible(false);
         fondo.setVisible(true);
+        reiniciarValores();
         limpiarTablaListadoFichas();
     }//GEN-LAST:event_cerrarListado1ActionPerformed
 
@@ -2732,6 +2793,7 @@ public class NewJFrame extends javax.swing.JFrame {
        
        cerrarPestañas();
        cerrarPaneles();
+       reiniciarValores();
        cargarTablaFichas();
        fondo.setVisible(false);
        pestañaVerFichas.setVisible(true);
@@ -2782,8 +2844,19 @@ public class NewJFrame extends javax.swing.JFrame {
         }   catch(Exception e)  {
             System.err.println(e);
         }
+        
         pestañaEditarPersona.setVisible(false);
-        fondo.setVisible(true);
+        reiniciarValores();
+        
+        //CARGO DE NUEVO LA TABLA DESDE LA DB
+        limpiarTablaListadoFichas();
+        cargarTablaFichas();
+        pestañaVerFichas.setVisible(true);
+        
+        
+        
+        
+        
         //ingresaDNI.setText("");
         //ingresaNombrePersona.setText("");
         //ingresaApellidoPersona.setText("");
@@ -2801,6 +2874,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private void botonCancelarPersona1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarPersona1ActionPerformed
         pestañaEditarPersona.setVisible(false);
         pestañaVerFichas.setVisible(true);
+        reiniciarValores();
     }//GEN-LAST:event_botonCancelarPersona1ActionPerformed
 
     private void ingresaDNI1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ingresaDNI1KeyReleased
@@ -2878,7 +2952,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     VentaId clave= new VentaId();
                     clave.setCodigoproducto(Long.parseLong(modeloProductosVenta.getValueAt(i, 0).toString()));
                     clave.setDni(Long.parseLong(ingresaDniVenta.getText()));                
-                    v1.setCantidad((short) Long.parseLong(modeloProductosVenta.getValueAt(i, 2).toString()));
+                    v1.setCantidad(Long.parseLong(modeloProductosVenta.getValueAt(i, 2).toString()));
                     Date date = new Date();
                     v1.setFecha(date);
                     v1.setId(clave);
@@ -2893,7 +2967,7 @@ public class NewJFrame extends javax.swing.JFrame {
             }
             
             limpiarTablaListadoVentas();
-            
+            reiniciarValores();
     }//GEN-LAST:event_botonRealizarVentaActionPerformed
 
     private void botonRealizarVentaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_botonRealizarVentaKeyReleased
@@ -2901,6 +2975,7 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRealizarVentaKeyReleased
 
     private void botonCancelarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarVentaActionPerformed
+        reiniciarValores();
         pestañaVenta.setVisible(false);
         fondo.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_botonCancelarVentaActionPerformed
@@ -2936,10 +3011,12 @@ public class NewJFrame extends javax.swing.JFrame {
     private void botonVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVentaActionPerformed
         cerrarPestañas();
         cerrarPaneles();
+        reiniciarValores();
         fondo.setVisible(false);
         limpiarTablaListadoVentas();
         pestañaVenta.setVisible(true);
-        
+        precioTotalVenta=0d;
+        precioSubtotalVenta=0d;
     }//GEN-LAST:event_botonVentaActionPerformed
 
     private void ingresaFiltroFicha1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresaFiltroFicha1MouseClicked
@@ -3000,10 +3077,14 @@ public class NewJFrame extends javax.swing.JFrame {
             ingresaDniVenta.setText(DNIeditado);
             ingresaNombreVenta.setText(nombreEditado);
             ingresaApellidoVenta.setText(apellidoEditado);
-            if (categoriaEditado.equals("Lider"))
+            if (categoriaEditado.equals("Lider")){
                 jComboBoxTipo2.setSelectedIndex(0);
-            else
+                descuentoVenta.setText(DESCUENTOLIDER+"");
+            }
+            else{
                 jComboBoxTipo2.setSelectedIndex(1);
+                descuentoVenta.setText(DESCUENTOEXPERTA+"");
+            }
         }
 
 
@@ -3040,6 +3121,10 @@ public class NewJFrame extends javax.swing.JFrame {
            fila[4]=precio;
            fila[5]=precioTotal;
            modeloProductosVenta.addRow(fila);
+           precioSubtotalVenta=precioSubtotalVenta+precioTotal;
+           subtotalVenta.setText(precioSubtotalVenta+"");
+           precioTotalVenta=precioSubtotalVenta*(1-Double.parseDouble(descuentoVenta.getText()));
+           totalVenta.setText(precioTotalVenta+"");
            botonRealizarVenta.setEnabled(true);
         }
     }//GEN-LAST:event_seleccionarFichaVenta1ActionPerformed
@@ -3074,11 +3159,49 @@ public class NewJFrame extends javax.swing.JFrame {
     private void botonEliminarProductoDeVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarProductoDeVentaActionPerformed
         if(jTable4.getSelectedRow()>=0){
             int codSelect= Integer.parseInt(modeloProductosVenta.getValueAt(jTable4.getSelectedRow(), 0).toString());
+            
+           double precioTotalProducto=(double)modeloProductosVenta.getValueAt(jTable4.getSelectedRow(),5);
+           precioSubtotalVenta=precioSubtotalVenta-precioTotalProducto;
+           subtotalVenta.setText(precioSubtotalVenta+"");
+           precioTotalVenta=precioSubtotalVenta*Double.parseDouble(descuentoVenta.getText());
+           totalVenta.setText(precioTotalVenta+"");
+            
             modeloProductosVenta.removeRow(jTable4.getSelectedRow());
             if(jTable4.getRowCount() == 0)
                 botonRealizarVenta.setEnabled(false);
         }
     }//GEN-LAST:event_botonEliminarProductoDeVentaActionPerformed
+
+    private void botonConsignacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConsignacionActionPerformed
+        reiniciarValores();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonConsignacionActionPerformed
+
+    private void botonDevolucionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDevolucionActionPerformed
+        
+        reiniciarValores();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonDevolucionActionPerformed
+
+    private void botonMovimientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMovimientosActionPerformed
+        reiniciarValores();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonMovimientosActionPerformed
+
+    private void botonResumenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonResumenActionPerformed
+        reiniciarValores();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonResumenActionPerformed
+
+    private void botonListado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonListado1ActionPerformed
+        reiniciarValores();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonListado1ActionPerformed
+
+    private void botonListado2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonListado2ActionPerformed
+        reiniciarValores();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonListado2ActionPerformed
 
     
     /**

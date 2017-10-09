@@ -1,2 +1,4 @@
 /src/hibernate.cfg.xml
 /src/hibernate.reveng.xml
+/nbproject/private/
+/build/

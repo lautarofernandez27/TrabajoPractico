@@ -117,11 +117,11 @@ public class NewJFrame extends javax.swing.JFrame {
         labelDomicilio = new javax.swing.JLabel();
         ingresaTelefono = new javax.swing.JTextField();
         labelTelefono = new javax.swing.JLabel();
-        jComboBoxEstCivil = new javax.swing.JComboBox<String>();
+        jComboBoxEstCivil = new javax.swing.JComboBox<>();
         diaNacimiento = new javax.swing.JSpinner();
         mesNacimiento = new javax.swing.JSpinner();
         añoNacimiento = new javax.swing.JSpinner();
-        jComboBoxTipo = new javax.swing.JComboBox<String>();
+        jComboBoxTipo = new javax.swing.JComboBox<>();
         ingresaLocalidad = new javax.swing.JTextField();
         labelLocalidad = new javax.swing.JLabel();
         labelFechaIngreso = new javax.swing.JLabel();
@@ -145,7 +145,7 @@ public class NewJFrame extends javax.swing.JFrame {
         labelCantidad = new javax.swing.JLabel();
         labelNeto = new javax.swing.JLabel();
         ingresaCantidad = new javax.swing.JTextField();
-        jComboBoxNeto = new javax.swing.JComboBox<String>();
+        jComboBoxNeto = new javax.swing.JComboBox<>();
         LabelCodNoDisp = new javax.swing.JLabel();
         pestañaVenta = new javax.swing.JPanel();
         labelDNI2 = new javax.swing.JLabel();
@@ -158,7 +158,7 @@ public class NewJFrame extends javax.swing.JFrame {
         ingresaDniVenta = new javax.swing.JTextField();
         ingresaNombreVenta = new javax.swing.JTextField();
         ingresaApellidoVenta = new javax.swing.JTextField();
-        jComboBoxTipo2 = new javax.swing.JComboBox<String>();
+        jComboBoxTipo2 = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
         botonEliminarProductoDeVenta = new javax.swing.JButton();
@@ -201,7 +201,7 @@ public class NewJFrame extends javax.swing.JFrame {
         labelCantidad1 = new javax.swing.JLabel();
         labelNeto1 = new javax.swing.JLabel();
         ingresaCantidad1 = new javax.swing.JTextField();
-        jComboBoxNeto1 = new javax.swing.JComboBox<String>();
+        jComboBoxNeto1 = new javax.swing.JComboBox<>();
         pestañaVerFichas = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
@@ -228,11 +228,11 @@ public class NewJFrame extends javax.swing.JFrame {
         labelDomicilio1 = new javax.swing.JLabel();
         ingresaTelefono1 = new javax.swing.JTextField();
         labelTelefono1 = new javax.swing.JLabel();
-        jComboBoxEstCivil1 = new javax.swing.JComboBox<String>();
+        jComboBoxEstCivil1 = new javax.swing.JComboBox<>();
         diaNacimiento1 = new javax.swing.JSpinner();
         mesNacimiento1 = new javax.swing.JSpinner();
         añoNacimiento1 = new javax.swing.JSpinner();
-        jComboBoxTipo1 = new javax.swing.JComboBox<String>();
+        jComboBoxTipo1 = new javax.swing.JComboBox<>();
         ingresaLocalidad1 = new javax.swing.JTextField();
         labelLocalidad1 = new javax.swing.JLabel();
         labelFechaIngreso1 = new javax.swing.JLabel();
@@ -280,7 +280,11 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         botonProducto.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        botonProducto.setText("PRODUCTOS");
+        botonProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/bordoProductos.png"))); // NOI18N
+        botonProducto.setBorderPainted(false);
+        botonProducto.setContentAreaFilled(false);
+        botonProducto.setInheritsPopupMenu(true);
+        botonProducto.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/bordoProductosApretado.png"))); // NOI18N
         botonProducto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 botonProductoMouseEntered(evt);
@@ -295,7 +299,11 @@ public class NewJFrame extends javax.swing.JFrame {
         botonProducto.setBounds(190, 0, 190, 70);
 
         botonCaja.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        botonCaja.setText("CAJA");
+        botonCaja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/bordoCaja.png"))); // NOI18N
+        botonCaja.setBorderPainted(false);
+        botonCaja.setContentAreaFilled(false);
+        botonCaja.setInheritsPopupMenu(true);
+        botonCaja.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/bordoCajaApretado.png"))); // NOI18N
         botonCaja.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 botonCajaMouseEntered(evt);
@@ -310,10 +318,13 @@ public class NewJFrame extends javax.swing.JFrame {
         botonCaja.setBounds(0, 0, 190, 70);
 
         botonPersonas.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        botonPersonas.setText("PERSONAS");
+        botonPersonas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/bordoFichas.png"))); // NOI18N
+        botonPersonas.setBorderPainted(false);
+        botonPersonas.setContentAreaFilled(false);
         botonPersonas.setMaximumSize(new java.awt.Dimension(119, 29));
         botonPersonas.setMinimumSize(new java.awt.Dimension(119, 29));
         botonPersonas.setPreferredSize(new java.awt.Dimension(119, 29));
+        botonPersonas.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/bordoFichasApretado.png"))); // NOI18N
         botonPersonas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 botonPersonasMouseEntered(evt);
@@ -328,7 +339,10 @@ public class NewJFrame extends javax.swing.JFrame {
         botonPersonas.setBounds(380, 0, 190, 70);
 
         botonRankings.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        botonRankings.setText("RANKINGS");
+        botonRankings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/bordoRanking.png"))); // NOI18N
+        botonRankings.setBorderPainted(false);
+        botonRankings.setContentAreaFilled(false);
+        botonRankings.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/bordoRankingApretado.png"))); // NOI18N
         botonRankings.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 botonRankingsMouseEntered(evt);
@@ -345,7 +359,9 @@ public class NewJFrame extends javax.swing.JFrame {
         panelCaja.setLayout(null);
 
         botonVenta.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        botonVenta.setText("VENTA");
+        botonVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonVenta.png"))); // NOI18N
+        botonVenta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 0)));
+        botonVenta.setContentAreaFilled(false);
         botonVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonVentaActionPerformed(evt);
@@ -355,7 +371,9 @@ public class NewJFrame extends javax.swing.JFrame {
         botonVenta.setBounds(0, 0, 190, 50);
 
         botonConsignacion.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        botonConsignacion.setText("CONSIGNACION");
+        botonConsignacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonConsignacion.png"))); // NOI18N
+        botonConsignacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 0)));
+        botonConsignacion.setContentAreaFilled(false);
         botonConsignacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonConsignacionActionPerformed(evt);
@@ -365,7 +383,9 @@ public class NewJFrame extends javax.swing.JFrame {
         botonConsignacion.setBounds(0, 50, 190, 50);
 
         botonResumen.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        botonResumen.setText("RESUMEN");
+        botonResumen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonResumen.png"))); // NOI18N
+        botonResumen.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 0), 1, true));
+        botonResumen.setContentAreaFilled(false);
         botonResumen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonResumenActionPerformed(evt);
@@ -375,7 +395,9 @@ public class NewJFrame extends javax.swing.JFrame {
         botonResumen.setBounds(0, 200, 190, 50);
 
         botonDevolucion.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        botonDevolucion.setText("DEVOLUCION");
+        botonDevolucion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonDevolucion.png"))); // NOI18N
+        botonDevolucion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 0), 1, true));
+        botonDevolucion.setContentAreaFilled(false);
         botonDevolucion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonDevolucionActionPerformed(evt);
@@ -385,7 +407,9 @@ public class NewJFrame extends javax.swing.JFrame {
         botonDevolucion.setBounds(0, 100, 190, 50);
 
         botonMovimientos.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        botonMovimientos.setText("ULT. MOVIMIENTOS");
+        botonMovimientos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonUltMovimientos.png"))); // NOI18N
+        botonMovimientos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 0), 1, true));
+        botonMovimientos.setContentAreaFilled(false);
         botonMovimientos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonMovimientosActionPerformed(evt);
@@ -400,7 +424,9 @@ public class NewJFrame extends javax.swing.JFrame {
         panelProductos.setLayout(null);
 
         botonVerListado.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        botonVerListado.setText("VER LISTADO");
+        botonVerListado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonVerListado.png"))); // NOI18N
+        botonVerListado.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 0), 1, true));
+        botonVerListado.setContentAreaFilled(false);
         botonVerListado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonVerListadoActionPerformed(evt);
@@ -410,7 +436,9 @@ public class NewJFrame extends javax.swing.JFrame {
         botonVerListado.setBounds(0, 50, 190, 50);
 
         botonNuevoProducto.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        botonNuevoProducto.setText("NUEVO PRODUCTO");
+        botonNuevoProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonNuevoProd.png"))); // NOI18N
+        botonNuevoProducto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 0), 1, true));
+        botonNuevoProducto.setContentAreaFilled(false);
         botonNuevoProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonNuevoProductoActionPerformed(evt);
@@ -420,7 +448,9 @@ public class NewJFrame extends javax.swing.JFrame {
         botonNuevoProducto.setBounds(0, 0, 190, 50);
 
         botonStock.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        botonStock.setText("STOCK MINIMO");
+        botonStock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonStockMinimo.png"))); // NOI18N
+        botonStock.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 0), 1, true));
+        botonStock.setContentAreaFilled(false);
         botonStock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonStockActionPerformed(evt);
@@ -435,7 +465,9 @@ public class NewJFrame extends javax.swing.JFrame {
         panelPersonas.setLayout(null);
 
         botonListado.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        botonListado.setText("LISTADO");
+        botonListado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonVerListado.png"))); // NOI18N
+        botonListado.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 0), 1, true));
+        botonListado.setContentAreaFilled(false);
         botonListado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonListadoActionPerformed(evt);
@@ -445,7 +477,9 @@ public class NewJFrame extends javax.swing.JFrame {
         botonListado.setBounds(0, 50, 190, 50);
 
         botonNuevaFicha.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        botonNuevaFicha.setText("NUEVA FICHA");
+        botonNuevaFicha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonNuevaFicha.png"))); // NOI18N
+        botonNuevaFicha.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 0), 1, true));
+        botonNuevaFicha.setContentAreaFilled(false);
         botonNuevaFicha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonNuevaFichaActionPerformed(evt);
@@ -460,7 +494,9 @@ public class NewJFrame extends javax.swing.JFrame {
         panelRankings.setLayout(null);
 
         botonListado1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        botonListado1.setText("RANKING LIDERES");
+        botonListado1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonRankingLideres.png"))); // NOI18N
+        botonListado1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 0), 1, true));
+        botonListado1.setContentAreaFilled(false);
         botonListado1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonListado1ActionPerformed(evt);
@@ -470,7 +506,9 @@ public class NewJFrame extends javax.swing.JFrame {
         botonListado1.setBounds(0, 0, 200, 50);
 
         botonListado2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        botonListado2.setText("RANKING EXPERTAS");
+        botonListado2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/botonRankingExpertas.png"))); // NOI18N
+        botonListado2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 0, 0), 1, true));
+        botonListado2.setContentAreaFilled(false);
         botonListado2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonListado2ActionPerformed(evt);
@@ -624,7 +662,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaPersonas.add(labelTelefono);
         labelTelefono.setBounds(300, 140, 80, 30);
 
-        jComboBoxEstCivil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Casada", "Soltera" }));
+        jComboBoxEstCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Casada", "Soltera" }));
         jComboBoxEstCivil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxEstCivilActionPerformed(evt);
@@ -648,7 +686,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaPersonas.add(añoNacimiento);
         añoNacimiento.setBounds(220, 180, 60, 30);
 
-        jComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lider", "Experta" }));
+        jComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lider", "Experta" }));
         pestañaPersonas.add(jComboBoxTipo);
         jComboBoxTipo.setBounds(120, 220, 140, 30);
 
@@ -864,7 +902,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaNuevoProd.add(ingresaCantidad);
         ingresaCantidad.setBounds(110, 220, 200, 30);
 
-        jComboBoxNeto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Si", "No" }));
+        jComboBoxNeto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
         pestañaNuevoProd.add(jComboBoxNeto);
         jComboBoxNeto.setBounds(530, 120, 50, 30);
 
@@ -973,7 +1011,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaVenta.add(ingresaApellidoVenta);
         ingresaApellidoVenta.setBounds(480, 60, 160, 30);
 
-        jComboBoxTipo2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lider", "Experta" }));
+        jComboBoxTipo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lider", "Experta" }));
         jComboBoxTipo2.setEnabled(false);
         pestañaVenta.add(jComboBoxTipo2);
         jComboBoxTipo2.setBounds(480, 100, 160, 30);
@@ -1379,7 +1417,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaEditarProducto.add(ingresaCantidad1);
         ingresaCantidad1.setBounds(110, 220, 200, 30);
 
-        jComboBoxNeto1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Si", "No" }));
+        jComboBoxNeto1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
         pestañaEditarProducto.add(jComboBoxNeto1);
         jComboBoxNeto1.setBounds(530, 120, 50, 30);
 
@@ -1614,7 +1652,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaEditarPersona.add(labelTelefono1);
         labelTelefono1.setBounds(300, 140, 80, 30);
 
-        jComboBoxEstCivil1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Casada", "Soltera" }));
+        jComboBoxEstCivil1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Casada", "Soltera" }));
         jComboBoxEstCivil1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxEstCivil1ActionPerformed(evt);
@@ -1638,7 +1676,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaEditarPersona.add(añoNacimiento1);
         añoNacimiento1.setBounds(220, 180, 60, 30);
 
-        jComboBoxTipo1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lider", "Experta" }));
+        jComboBoxTipo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lider", "Experta" }));
         pestañaEditarPersona.add(jComboBoxTipo1);
         jComboBoxTipo1.setBounds(120, 220, 140, 30);
 
@@ -2107,14 +2145,6 @@ public class NewJFrame extends javax.swing.JFrame {
             cerrarPaneles();
     }//GEN-LAST:event_botonPersonasActionPerformed
 
-    private void botonCajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCajaActionPerformed
-        if (!hayPestañasAbiertas()){
-            panelCaja.setVisible(true);
-        }
-        else
-            cerrarPaneles();
-    }//GEN-LAST:event_botonCajaActionPerformed
-
     private void botonRankingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRankingsActionPerformed
         if (!hayPestañasAbiertas()){
             panelRankings.setVisible(true);
@@ -2122,13 +2152,6 @@ public class NewJFrame extends javax.swing.JFrame {
         else
             cerrarPaneles();     
     }//GEN-LAST:event_botonRankingsActionPerformed
-
-    private void botonCajaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCajaMouseEntered
-        if(hayPestañasAbiertas()){
-            cerrarPaneles();
-            panelCaja.setVisible(true);
-        }
-    }//GEN-LAST:event_botonCajaMouseEntered
 
     private void botonProductoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonProductoMouseEntered
         if(hayPestañasAbiertas()){
@@ -3396,6 +3419,21 @@ public class NewJFrame extends javax.swing.JFrame {
             cargarTablaRankingPVP("Experta");
         
     }//GEN-LAST:event_jComboBoxTipo4ItemStateChanged
+
+    private void botonCajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCajaActionPerformed
+        if (!hayPestañasAbiertas()){
+            panelCaja.setVisible(true);
+        }
+        else
+        cerrarPaneles();
+    }//GEN-LAST:event_botonCajaActionPerformed
+
+    private void botonCajaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCajaMouseEntered
+        if(hayPestañasAbiertas()){
+            cerrarPaneles();
+            panelCaja.setVisible(true);
+        }
+    }//GEN-LAST:event_botonCajaMouseEntered
 
     
     /**

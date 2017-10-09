@@ -55,7 +55,9 @@ public class NewJFrame extends javax.swing.JFrame {
         jTable4.setModel(modeloProductosVenta);
         jTable5.setModel(modeloFichas);
         jTable6.setModel(modelo);
-        
+        jTable7.setModel(modeloFichas);
+        jTable9.setModel(modeloFichas);
+    
         stockMinimo=5;
         
         precioTotalVenta=0d;
@@ -256,6 +258,18 @@ public class NewJFrame extends javax.swing.JFrame {
         seleccionarFichaVenta1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jSpinner1 = new javax.swing.JSpinner();
+        pestañaRankingLider = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTable7 = new javax.swing.JTable();
+        tituloListadoFichas2 = new javax.swing.JLabel();
+        cerrarListado2 = new javax.swing.JButton();
+        jComboBoxTipo3 = new javax.swing.JComboBox<String>();
+        pestañaRankingExpertas = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTable9 = new javax.swing.JTable();
+        tituloListadoFichas4 = new javax.swing.JLabel();
+        cerrarListado4 = new javax.swing.JButton();
+        jComboBoxTipo4 = new javax.swing.JComboBox<String>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -1843,6 +1857,121 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().add(pestañaSeleccionarProductoVenta);
         pestañaSeleccionarProductoVenta.setBounds(0, 70, 760, 570);
 
+        pestañaRankingLider.setMaximumSize(new java.awt.Dimension(760, 280));
+        pestañaRankingLider.setPreferredSize(new java.awt.Dimension(760, 280));
+        pestañaRankingLider.setLayout(null);
+
+        jTable7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "DNI", "Nombre", "Apellido", "Nacimiento", "Fecha Ingreso", "Categoria", "Localidad", "Domicilio", "Telefono", "E. Civil", "C. Postal"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, true, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTable7.getTableHeader().setReorderingAllowed(false);
+        jScrollPane7.setViewportView(jTable7);
+
+        pestañaRankingLider.add(jScrollPane7);
+        jScrollPane7.setBounds(10, 120, 750, 290);
+
+        tituloListadoFichas2.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        tituloListadoFichas2.setText("RANKING LIDERES");
+        pestañaRankingLider.add(tituloListadoFichas2);
+        tituloListadoFichas2.setBounds(290, 0, 360, 30);
+
+        cerrarListado2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        cerrarListado2.setText("X");
+        cerrarListado2.setBorderPainted(false);
+        cerrarListado2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cerrarListado2ActionPerformed(evt);
+            }
+        });
+        pestañaRankingLider.add(cerrarListado2);
+        cerrarListado2.setBounds(690, 10, 50, 30);
+
+        jComboBoxTipo3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Por P.V.P", "Por cantidad" }));
+        jComboBoxTipo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxTipo3ActionPerformed(evt);
+            }
+        });
+        pestañaRankingLider.add(jComboBoxTipo3);
+        jComboBoxTipo3.setBounds(330, 60, 160, 30);
+
+        getContentPane().add(pestañaRankingLider);
+        pestañaRankingLider.setBounds(0, 70, 760, 570);
+
+        pestañaRankingExpertas.setMaximumSize(new java.awt.Dimension(760, 280));
+        pestañaRankingExpertas.setPreferredSize(new java.awt.Dimension(760, 280));
+        pestañaRankingExpertas.setLayout(null);
+
+        jTable9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "DNI", "Nombre", "Apellido", "Nacimiento", "Fecha Ingreso", "Categoria", "Localidad", "Domicilio", "Telefono", "E. Civil", "C. Postal"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, true, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTable9.getTableHeader().setReorderingAllowed(false);
+        jScrollPane9.setViewportView(jTable9);
+
+        pestañaRankingExpertas.add(jScrollPane9);
+        jScrollPane9.setBounds(10, 120, 750, 290);
+
+        tituloListadoFichas4.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        tituloListadoFichas4.setText("RANKING EXPERTAS");
+        pestañaRankingExpertas.add(tituloListadoFichas4);
+        tituloListadoFichas4.setBounds(290, 0, 360, 30);
+
+        cerrarListado4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        cerrarListado4.setText("X");
+        cerrarListado4.setBorderPainted(false);
+        cerrarListado4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cerrarListado4ActionPerformed(evt);
+            }
+        });
+        pestañaRankingExpertas.add(cerrarListado4);
+        cerrarListado4.setBounds(690, 10, 50, 30);
+
+        jComboBoxTipo4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Por P.V.P", "Por cantidad" }));
+        jComboBoxTipo4.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBoxTipo4ItemStateChanged(evt);
+            }
+        });
+        jComboBoxTipo4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxTipo4ActionPerformed(evt);
+            }
+        });
+        pestañaRankingExpertas.add(jComboBoxTipo4);
+        jComboBoxTipo4.setBounds(330, 60, 160, 30);
+
+        getContentPane().add(pestañaRankingExpertas);
+        pestañaRankingExpertas.setBounds(0, 70, 760, 570);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1931,6 +2060,8 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaVenta.setVisible(false);
         pestañaFichasParaVenta.setVisible(false);
         pestañaSeleccionarProductoVenta.setVisible(false);
+        pestañaRankingExpertas.setVisible(false);
+        pestañaRankingLider.setVisible(false);
     }
     
     private boolean camposProductoCompletos(){
@@ -2298,7 +2429,34 @@ public class NewJFrame extends javax.swing.JFrame {
         else
             botonGuardarPersona.setEnabled(false);
     }//GEN-LAST:event_ingresaDNIKeyReleased
-
+    private void cargarTablaRankingCantidad(String categoria){
+        List<Ficha> fichas;
+       Session session = NewHibernateUtil.getSessionFactory().openSession();
+       session.beginTransaction();
+       Query q=session.createQuery("from Ficha where categoria = 'Experta'");
+       fichas= new ArrayList<Ficha>(q.list());
+       session.getTransaction().commit();      
+       session.close();
+       Object[] fila = new Object[11]; //es la cantidad de atributos del producto
+       for(Ficha f : fichas){
+           fila[0]= f.getDni();
+           fila[1]=f.getNombre();
+           fila[2]=f.getApellido();
+           fila[3]=f.getFechanac();
+           fila[4]=f.getFechaingreso();
+           fila[5]=f.getCategoria();
+           fila[6]=f.getLocalidad();
+           fila[7]=f.getDomicilio();
+           fila[8]=f.getTelefono();
+           fila[9]=f.getEstadocivil();
+           fila[10]=f.getCodigopostal();
+           modeloFichas.addRow(fila);
+       }
+    }
+    private void cargarTablaRankingPVP(String categoria){
+        
+    }
+    
     private void cargarTablaFichas() {
        List<Ficha> fichas;
        Session session = NewHibernateUtil.getSessionFactory().openSession();
@@ -3195,13 +3353,49 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void botonListado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonListado1ActionPerformed
         reiniciarValores();
+        
+       cerrarPestañas();
+       cerrarPaneles();
+       fondo.setVisible(false);
+       pestañaRankingLider.setVisible(true);       
         // TODO add your handling code here:
     }//GEN-LAST:event_botonListado1ActionPerformed
 
     private void botonListado2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonListado2ActionPerformed
         reiniciarValores();
+        
+       cerrarPestañas();
+       cerrarPaneles();
+       fondo.setVisible(false);
+       pestañaRankingExpertas.setVisible(true);
+       
         // TODO add your handling code here:
     }//GEN-LAST:event_botonListado2ActionPerformed
+
+    private void cerrarListado2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarListado2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cerrarListado2ActionPerformed
+
+    private void jComboBoxTipo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTipo3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxTipo3ActionPerformed
+
+    private void cerrarListado4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarListado4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cerrarListado4ActionPerformed
+
+    private void jComboBoxTipo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTipo4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxTipo4ActionPerformed
+
+    private void jComboBoxTipo4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxTipo4ItemStateChanged
+        // TODO add your handling code here:
+        if (String.valueOf(jComboBoxTipo4.getSelectedItem()).equals("Por cantidad"))
+            cargarTablaRankingCantidad("Experta");
+        else 
+            cargarTablaRankingPVP("Experta");
+        
+    }//GEN-LAST:event_jComboBoxTipo4ItemStateChanged
 
     
     /**
@@ -3286,6 +3480,8 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton buscarFichaVenta;
     private javax.swing.JButton cerrarListado;
     private javax.swing.JButton cerrarListado1;
+    private javax.swing.JButton cerrarListado2;
+    private javax.swing.JButton cerrarListado4;
     private javax.swing.JButton cerrarStockMinimo;
     private javax.swing.JTextField descuentoVenta;
     private javax.swing.JSpinner diaIngreso;
@@ -3334,6 +3530,8 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxTipo;
     private javax.swing.JComboBox<String> jComboBoxTipo1;
     private javax.swing.JComboBox<String> jComboBoxTipo2;
+    private javax.swing.JComboBox<String> jComboBoxTipo3;
+    private javax.swing.JComboBox<String> jComboBoxTipo4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -3348,6 +3546,8 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
@@ -3355,6 +3555,8 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
+    private javax.swing.JTable jTable7;
+    private javax.swing.JTable jTable9;
     private javax.swing.JLabel labelApellido;
     private javax.swing.JLabel labelApellido1;
     private javax.swing.JLabel labelApellido2;
@@ -3403,6 +3605,8 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel pestañaFichasParaVenta;
     private javax.swing.JPanel pestañaNuevoProd;
     private javax.swing.JPanel pestañaPersonas;
+    private javax.swing.JPanel pestañaRankingExpertas;
+    private javax.swing.JPanel pestañaRankingLider;
     private javax.swing.JPanel pestañaSeleccionarProductoVenta;
     private javax.swing.JPanel pestañaStockMinimo;
     private javax.swing.JPanel pestañaVenta;
@@ -3414,6 +3618,8 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel tituloEditarProducto;
     private javax.swing.JLabel tituloListadoFichas;
     private javax.swing.JLabel tituloListadoFichas1;
+    private javax.swing.JLabel tituloListadoFichas2;
+    private javax.swing.JLabel tituloListadoFichas4;
     private javax.swing.JLabel tituloListadoProd;
     private javax.swing.JLabel tituloListadoProd1;
     private javax.swing.JLabel tituloListadoProd2;

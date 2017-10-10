@@ -59,6 +59,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jTable9.setModel(modeloFichas);
     
         stockMinimo=5;
+        contadorVenta=0;
         
         precioTotalVenta=0d;
         precioSubtotalVenta=0d;
@@ -263,13 +264,13 @@ public class NewJFrame extends javax.swing.JFrame {
         jTable7 = new javax.swing.JTable();
         tituloListadoFichas2 = new javax.swing.JLabel();
         cerrarListado2 = new javax.swing.JButton();
-        jComboBoxTipo3 = new javax.swing.JComboBox<String>();
+        jComboBoxTipo3 = new javax.swing.JComboBox<>();
         pestañaRankingExpertas = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         jTable9 = new javax.swing.JTable();
         tituloListadoFichas4 = new javax.swing.JLabel();
         cerrarListado4 = new javax.swing.JButton();
-        jComboBoxTipo4 = new javax.swing.JComboBox<String>();
+        jComboBoxTipo4 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -1938,7 +1939,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaRankingLider.add(cerrarListado2);
         cerrarListado2.setBounds(690, 10, 50, 30);
 
-        jComboBoxTipo3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Por P.V.P", "Por cantidad" }));
+        jComboBoxTipo3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Por P.V.P", "Por cantidad" }));
         jComboBoxTipo3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxTipo3ActionPerformed(evt);
@@ -1993,7 +1994,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaRankingExpertas.add(cerrarListado4);
         cerrarListado4.setBounds(690, 10, 50, 30);
 
-        jComboBoxTipo4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Por P.V.P", "Por cantidad" }));
+        jComboBoxTipo4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Por P.V.P", "Por cantidad" }));
         jComboBoxTipo4.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBoxTipo4ItemStateChanged(evt);
@@ -2456,13 +2457,12 @@ public class NewJFrame extends javax.swing.JFrame {
         List<Ficha> fichas;
        Session session = NewHibernateUtil.getSessionFactory().openSession();
        session.beginTransaction();
-       Query q=session.createQuery("from Ficha where categoria = 'Experta'");
+       Query q=session.createQuery("from Ficha f where f.categoria = '"+categoria+"' and f.dni in(2,4,6)");
        fichas= new ArrayList<Ficha>(q.list());
        session.getTransaction().commit();      
        session.close();
        Object[] fila = new Object[11]; //es la cantidad de atributos del producto
-       for(Ficha f : fichas){
-           fila[0]= f.getDni();
+       for(Ficha f : fichas){fila[0]= f.getDni();
            fila[1]=f.getNombre();
            fila[2]=f.getApellido();
            fila[3]=f.getFechanac();
@@ -3128,27 +3128,32 @@ public class NewJFrame extends javax.swing.JFrame {
                 Session session = NewHibernateUtil.getSessionFactory().openSession();
                 session.beginTransaction();
             try{
+                
+                List<Long> lista;
+                Query q=session.createQuery("SELECT MAX(v.id.idVenta) from Venta v");
+                lista= new ArrayList<Long>(q.list());
+                Long idVenta =lista.get(0)+1;
+                
                 for (int i=0; i<filas;i++){
                     Venta v1= new Venta();
                     VentaId clave= new VentaId();
-                    clave.setCodigoproducto(Long.parseLong(modeloProductosVenta.getValueAt(i, 0).toString()));
-                    clave.setDni(Long.parseLong(ingresaDniVenta.getText()));                
-                    v1.setCantidad(Long.parseLong(modeloProductosVenta.getValueAt(i, 2).toString()));
+                    clave.setIdVenta(idVenta);
+                    clave.setCodigoproducto(BigDecimal.valueOf(Long.parseLong(modeloProductosVenta.getValueAt(0, 0).toString())));
+                    clave.setDni(Long.parseLong(ingresaDniVenta.getText()));
+                    v1.setCantidad(Long.parseLong(modeloProductosVenta.getValueAt(0, 2).toString()));
                     Date date = new Date();
                     v1.setFecha(date);
                     v1.setId(clave);
-                    System.out.println("VOY A AGREGAR Y ELIMINAR"+ clave.getCodigoproducto());
-                    //modeloProductosVenta.removeRow(0);
+                    modeloProductosVenta.removeRow(0);
                     session.save(v1);                    
                 }
                 session.getTransaction().commit();
-                System.out.println("AGREGUE ");
             }catch(Exception e)  {
             System.err.println(e);
             }
-            
             limpiarTablaListadoVentas();
             reiniciarValores();
+            contadorVenta++;
     }//GEN-LAST:event_botonRealizarVentaActionPerformed
 
     private void botonRealizarVentaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_botonRealizarVentaKeyReleased
@@ -3254,7 +3259,7 @@ public class NewJFrame extends javax.swing.JFrame {
             String DNIeditado=modeloFichas.getValueAt(jTable5.getSelectedRow(), 0).toString();
             String nombreEditado=modeloFichas.getValueAt(jTable5.getSelectedRow(), 1).toString();
             String apellidoEditado=modeloFichas.getValueAt(jTable5.getSelectedRow(), 2).toString();
-            String categoriaEditado=modeloFichas.getValueAt(jTable5.getSelectedRow(), 5).toString();
+            String categoriaEditado=modeloFichas.getValueAt(jTable5.getSelectedRow(), 5).toString();            
             ingresaDniVenta.setText(DNIeditado);
             ingresaNombreVenta.setText(nombreEditado);
             ingresaApellidoVenta.setText(apellidoEditado);
@@ -3408,16 +3413,15 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_cerrarListado4ActionPerformed
 
     private void jComboBoxTipo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTipo4ActionPerformed
-        // TODO add your handling code here:
+        
+        if (String.valueOf(jComboBoxTipo4.getSelectedItem()).equals("Por cantidad"))
+            cargarTablaRankingCantidad("Experta");
+        else 
+            cargarTablaRankingPVP("Experta");        // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxTipo4ActionPerformed
 
     private void jComboBoxTipo4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxTipo4ItemStateChanged
         // TODO add your handling code here:
-        if (String.valueOf(jComboBoxTipo4.getSelectedItem()).equals("Por cantidad"))
-            cargarTablaRankingCantidad("Experta");
-        else 
-            cargarTablaRankingPVP("Experta");
-        
     }//GEN-LAST:event_jComboBoxTipo4ItemStateChanged
 
     private void botonCajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCajaActionPerformed
@@ -3672,4 +3676,5 @@ public class NewJFrame extends javax.swing.JFrame {
     private Double precioSubtotalVenta;
     private final Double DESCUENTOLIDER=0.10;
     private final Double DESCUENTOEXPERTA=0.45;
+    private int contadorVenta;
 }

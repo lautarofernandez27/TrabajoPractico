@@ -117,11 +117,11 @@ public class NewJFrame extends javax.swing.JFrame {
         labelDomicilio = new javax.swing.JLabel();
         ingresaTelefono = new javax.swing.JTextField();
         labelTelefono = new javax.swing.JLabel();
-        jComboBoxEstCivil = new javax.swing.JComboBox<>();
+        jComboBoxEstCivil = new javax.swing.JComboBox<String>();
         diaNacimiento = new javax.swing.JSpinner();
         mesNacimiento = new javax.swing.JSpinner();
         añoNacimiento = new javax.swing.JSpinner();
-        jComboBoxTipo = new javax.swing.JComboBox<>();
+        jComboBoxTipo = new javax.swing.JComboBox<String>();
         ingresaLocalidad = new javax.swing.JTextField();
         labelLocalidad = new javax.swing.JLabel();
         labelFechaIngreso = new javax.swing.JLabel();
@@ -145,7 +145,7 @@ public class NewJFrame extends javax.swing.JFrame {
         labelCantidad = new javax.swing.JLabel();
         labelNeto = new javax.swing.JLabel();
         ingresaCantidad = new javax.swing.JTextField();
-        jComboBoxNeto = new javax.swing.JComboBox<>();
+        jComboBoxNeto = new javax.swing.JComboBox<String>();
         LabelCodNoDisp = new javax.swing.JLabel();
         pestañaVenta = new javax.swing.JPanel();
         labelDNI2 = new javax.swing.JLabel();
@@ -158,7 +158,7 @@ public class NewJFrame extends javax.swing.JFrame {
         ingresaDniVenta = new javax.swing.JTextField();
         ingresaNombreVenta = new javax.swing.JTextField();
         ingresaApellidoVenta = new javax.swing.JTextField();
-        jComboBoxTipo2 = new javax.swing.JComboBox<>();
+        jComboBoxTipo2 = new javax.swing.JComboBox<String>();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
         botonEliminarProductoDeVenta = new javax.swing.JButton();
@@ -201,7 +201,7 @@ public class NewJFrame extends javax.swing.JFrame {
         labelCantidad1 = new javax.swing.JLabel();
         labelNeto1 = new javax.swing.JLabel();
         ingresaCantidad1 = new javax.swing.JTextField();
-        jComboBoxNeto1 = new javax.swing.JComboBox<>();
+        jComboBoxNeto1 = new javax.swing.JComboBox<String>();
         pestañaVerFichas = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
@@ -228,11 +228,11 @@ public class NewJFrame extends javax.swing.JFrame {
         labelDomicilio1 = new javax.swing.JLabel();
         ingresaTelefono1 = new javax.swing.JTextField();
         labelTelefono1 = new javax.swing.JLabel();
-        jComboBoxEstCivil1 = new javax.swing.JComboBox<>();
+        jComboBoxEstCivil1 = new javax.swing.JComboBox<String>();
         diaNacimiento1 = new javax.swing.JSpinner();
         mesNacimiento1 = new javax.swing.JSpinner();
         añoNacimiento1 = new javax.swing.JSpinner();
-        jComboBoxTipo1 = new javax.swing.JComboBox<>();
+        jComboBoxTipo1 = new javax.swing.JComboBox<String>();
         ingresaLocalidad1 = new javax.swing.JTextField();
         labelLocalidad1 = new javax.swing.JLabel();
         labelFechaIngreso1 = new javax.swing.JLabel();
@@ -662,7 +662,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaPersonas.add(labelTelefono);
         labelTelefono.setBounds(300, 140, 80, 30);
 
-        jComboBoxEstCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Casada", "Soltera" }));
+        jComboBoxEstCivil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Casada", "Soltera" }));
         jComboBoxEstCivil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxEstCivilActionPerformed(evt);
@@ -686,7 +686,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaPersonas.add(añoNacimiento);
         añoNacimiento.setBounds(220, 180, 60, 30);
 
-        jComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lider", "Experta" }));
+        jComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lider", "Experta" }));
         pestañaPersonas.add(jComboBoxTipo);
         jComboBoxTipo.setBounds(120, 220, 140, 30);
 
@@ -902,7 +902,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaNuevoProd.add(ingresaCantidad);
         ingresaCantidad.setBounds(110, 220, 200, 30);
 
-        jComboBoxNeto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
+        jComboBoxNeto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Si", "No" }));
         pestañaNuevoProd.add(jComboBoxNeto);
         jComboBoxNeto.setBounds(530, 120, 50, 30);
 
@@ -1011,7 +1011,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaVenta.add(ingresaApellidoVenta);
         ingresaApellidoVenta.setBounds(480, 60, 160, 30);
 
-        jComboBoxTipo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lider", "Experta" }));
+        jComboBoxTipo2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lider", "Experta" }));
         jComboBoxTipo2.setEnabled(false);
         pestañaVenta.add(jComboBoxTipo2);
         jComboBoxTipo2.setBounds(480, 100, 160, 30);
@@ -1417,7 +1417,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaEditarProducto.add(ingresaCantidad1);
         ingresaCantidad1.setBounds(110, 220, 200, 30);
 
-        jComboBoxNeto1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
+        jComboBoxNeto1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Si", "No" }));
         pestañaEditarProducto.add(jComboBoxNeto1);
         jComboBoxNeto1.setBounds(530, 120, 50, 30);
 
@@ -1652,7 +1652,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaEditarPersona.add(labelTelefono1);
         labelTelefono1.setBounds(300, 140, 80, 30);
 
-        jComboBoxEstCivil1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Casada", "Soltera" }));
+        jComboBoxEstCivil1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Casada", "Soltera" }));
         jComboBoxEstCivil1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxEstCivil1ActionPerformed(evt);
@@ -1676,7 +1676,7 @@ public class NewJFrame extends javax.swing.JFrame {
         pestañaEditarPersona.add(añoNacimiento1);
         añoNacimiento1.setBounds(220, 180, 60, 30);
 
-        jComboBoxTipo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lider", "Experta" }));
+        jComboBoxTipo1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lider", "Experta" }));
         pestañaEditarPersona.add(jComboBoxTipo1);
         jComboBoxTipo1.setBounds(120, 220, 140, 30);
 
@@ -2456,7 +2456,7 @@ public class NewJFrame extends javax.swing.JFrame {
         List<Ficha> fichas;
        Session session = NewHibernateUtil.getSessionFactory().openSession();
        session.beginTransaction();
-       Query q=session.createQuery("from Ficha where categoria = 'Experta'");
+       Query q=session.createQuery("from Ficha as f where f.dni in (select v.dni from Venta as v)");
        fichas= new ArrayList<Ficha>(q.list());
        session.getTransaction().commit();      
        session.close();
@@ -3128,17 +3128,22 @@ public class NewJFrame extends javax.swing.JFrame {
                 Session session = NewHibernateUtil.getSessionFactory().openSession();
                 session.beginTransaction();
             try{
+                List<Long> lista;
+                Query q= session.createQuery("SELECT MAX (v.id.idVenta) from Venta v");
+                lista = new ArrayList<Long>(q.list());
+                Long idVenta = lista.get(0)+ 1;
+                
                 for (int i=0; i<filas;i++){
                     Venta v1= new Venta();
                     VentaId clave= new VentaId();
-                    clave.setCodigoproducto(Long.parseLong(modeloProductosVenta.getValueAt(i, 0).toString()));
+                    clave.setIdVenta(idVenta);
+                    clave.setCodigoproducto(Long.parseLong(modeloProductosVenta.getValueAt(0, 0).toString()));
                     clave.setDni(Long.parseLong(ingresaDniVenta.getText()));                
-                    v1.setCantidad(Long.parseLong(modeloProductosVenta.getValueAt(i, 2).toString()));
+                    v1.setCantidad(Long.parseLong(modeloProductosVenta.getValueAt(0, 2).toString()));
                     Date date = new Date();
                     v1.setFecha(date);
                     v1.setId(clave);
-                    System.out.println("VOY A AGREGAR Y ELIMINAR"+ clave.getCodigoproducto());
-                    //modeloProductosVenta.removeRow(0);
+                    modeloProductosVenta.removeRow(0);
                     session.save(v1);                    
                 }
                 session.getTransaction().commit();
@@ -3409,15 +3414,14 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jComboBoxTipo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTipo4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxTipo4ActionPerformed
-
-    private void jComboBoxTipo4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxTipo4ItemStateChanged
-        // TODO add your handling code here:
         if (String.valueOf(jComboBoxTipo4.getSelectedItem()).equals("Por cantidad"))
             cargarTablaRankingCantidad("Experta");
         else 
             cargarTablaRankingPVP("Experta");
-        
+    }//GEN-LAST:event_jComboBoxTipo4ActionPerformed
+
+    private void jComboBoxTipo4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxTipo4ItemStateChanged
+        // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxTipo4ItemStateChanged
 
     private void botonCajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCajaActionPerformed

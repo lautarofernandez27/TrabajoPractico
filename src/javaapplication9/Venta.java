@@ -18,9 +18,7 @@ public class Venta  implements java.io.Serializable {
     }
 
 	
-    public Venta(VentaId id) {
-        this.id = id;
-    }
+
     public Venta(VentaId id, Date fecha, Long cantidad) {
        this.id = id;
        this.fecha = fecha;

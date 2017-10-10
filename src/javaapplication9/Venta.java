@@ -1,5 +1,5 @@
 package javaapplication9;
-// Generated 10/10/2017 11:15:41 by Hibernate Tools 4.3.1
+// Generated 10/10/2017 17:36:14 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -18,6 +18,12 @@ public class Venta  implements java.io.Serializable {
     public Venta() {
     }
 
+	
+    public Venta(VentaId id, Ficha ficha, Date fecha) {
+        this.id = id;
+        this.ficha = ficha;
+        this.fecha = fecha;
+    }
     public Venta(VentaId id, Ficha ficha, Date fecha, Long cantidad) {
        this.id = id;
        this.ficha = ficha;
@@ -53,6 +59,10 @@ public class Venta  implements java.io.Serializable {
     public void setCantidad(Long cantidad) {
         this.cantidad = cantidad;
     }
+
+
+
+
 }
 
 

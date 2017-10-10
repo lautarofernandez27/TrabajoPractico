@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 10/10/2017 11:15:43 by Hibernate Tools 4.3.1 -->
+<!-- Generated 10/10/2017 17:36:14 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="javaapplication9.Venta" table="venta" schema="public" optimistic-lock="version">
         <composite-id name="id" class="javaapplication9.VentaId">
@@ -21,8 +21,8 @@
         <property name="fecha" type="date">
             <column name="fecha" length="13" not-null="true" />
         </property>
-        <property name="cantidad" type="long">
-            <column name="cantidad" precision="4" scale="0" not-null="true" />
+        <property name="cantidad" type="java.lang.Long">
+            <column name="cantidad" precision="10" scale="0" />
         </property>
     </class>
 </hibernate-mapping>
